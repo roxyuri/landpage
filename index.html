@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e7ded0">
+<meta name="description" content="Ketilly Santana — Estética facial e corporal. Agende sua consulta, conheça os tratamentos ou fale direto no WhatsApp.">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Ketilly Santana — Estética facial e corporal">
+<meta property="og:description" content="Agende sua consulta, conheça os tratamentos ou fale direto no WhatsApp.">
+<meta property="og:image" content="assets/ketilly.jpeg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<title>Ketilly Santana — Estética facial e corporal</title>
+
+<link rel="icon" type="image/jpeg" href="assets/ketilly.jpeg">
+
+<!-- Fonts: pinned to fonts.googleapis.com (allowed in CSP). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ── Reset & base ───────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #15110E;
+    color: #F0E6D7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  /* ── Theme tokens (Champagne palette) ────────────────────────── */
+  :root {
+    --bg: #e7ded0;
+    --ink: #2A2018;
+    --sub: #9B7A4F;
+    --accent: #C9A876;
+    --photo-focus-y: 18%;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────── */
+  .page {
+    background: var(--bg);
+    color: var(--ink);
+    max-width: 520px;
+    margin: 0 auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Hero photo block */
+  .hero {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    max-height: 70vh;
+    overflow: hidden;
+    background: #000;
+    flex-shrink: 0;
+  }
+  .hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 50% var(--photo-focus-y);
+    filter: saturate(0.95);
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.55) 100%);
+    pointer-events: none;
+  }
+
+  .masthead {
+    position: absolute;
+    top: max(20px, env(safe-area-inset-top, 0));
+    left: 24px; right: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10.5px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--ink); font-weight: 600;
+    z-index: 2;
+    text-shadow: 0 1px 12px rgba(0,0,0,.4);
+  }
+
+  .nameplate {
+    position: absolute;
+    left: 24px; right: 24px; bottom: 22px;
+    font-family: var(--serif);
+    font-size: clamp(48px, 14vw, 72px);
+    line-height: 0.92;
+    font-weight: 400;
+    color: #FBF5EC;
+    letter-spacing: -0.02em;
+    z-index: 2;
+    text-shadow:
+      0 2px 24px rgba(0,0,0,.65),
+      0 1px 4px rgba(0,0,0,.4);
+  }
+  .nameplate .last {
+    display: block;
+    font-style: italic;
+    margin-left: clamp(20px, 6vw, 36px);
+    color: var(--accent);
+  }
+
+  /* Body */
+  .body {
+    padding: 28px 24px 36px;
+    flex: 1;
+    display: flex; flex-direction: column;
+  }
+
+  .role {
+    font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--sub); font-weight: 500;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(42, 32, 24, 0.18);
+    display: flex; justify-content: flex-start; align-items: center;
+  }
+  .role .vol {
+    font-family: var(--serif); font-style: italic;
+    text-transform: none; letter-spacing: 0;
+    font-size: 14px; color: var(--ink);
+  }
+
+  .tagline {
+    font-family: var(--serif);
+    font-size: 19px; font-style: italic;
+    color: var(--ink);
+    margin: 18px 0 24px;
+    line-height: 1.4;
+  }
+
+  /* CTA list */
+  .cta-list {
+    display: flex; flex-direction: column;
+    border-top: 1px solid rgba(42, 32, 24, 0.22);
+  }
+  .cta {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 4px;
+    border-bottom: 1px solid rgba(42, 32, 24, 0.22);
+    text-decoration: none;
+    color: var(--ink);
+    transition: padding-left .25s ease, color .15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cta:hover, .cta:focus-visible {
+    padding-left: 12px;
+    color: var(--accent);
+    outline: none;
+  }
+  .cta:focus-visible {
+    outline: 1px dashed var(--accent);
+    outline-offset: 4px;
+  }
+  .cta .num {
+    font-family: var(--serif);
+    font-size: 12px; font-style: italic;
+    color: var(--sub);
+    width: 26px;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+  .cta .label {
+    flex: 1;
+    font-family: var(--serif);
+    font-size: clamp(20px, 5.4vw, 26px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .cta .meta {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sub);
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 32px;
+    padding-top: 18px;
+    text-align: center;
+    font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--sub);
+  }
+  .footer a {
+    color: var(--sub);
+    text-decoration: none;
+    transition: color .15s;
+  }
+  .footer a:hover, .footer a:focus-visible { color: var(--accent); }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+  <header class="hero">
+    <img
+      src="assets/ketilly.jpeg"
+      alt="Ketilly Santana, esteticista facial e corporal"
+      width="896" height="1280"
+      decoding="async"
+      fetchpriority="high">
+    <h1 class="nameplate">
+      Ketilly<span class="last">Santana</span>
+    </h1>
+  </header>
+
+  <section class="body">
+    <div class="role">
+      <span>Estética Facial &amp; Corporal</span>
+    </div>
+
+    <p class="tagline">“Você não precisa de promessas rápidas. Precisa de estratégia, constância e direção certa.”</p>
+
+    <nav class="cta-list" aria-label="Ações principais">
+      <a class="cta"
+         href="https://api.whatsapp.com/send?phone=5511919694124&amp;text=Ol%C3%A1%2C+vi+seu+perfil+no+instagram+e+quero+agendar+uma+consulta."
+         target="_blank"
+         rel="noopener noreferrer external">
+        <span class="num" aria-hidden="true">01</span>
+        <span class="label">Agendar consulta</span>
+        <span class="meta" aria-hidden="true">Vagas →</span>
+      </a>
+      <a class="cta"
+         href="https://api.whatsapp.com/send?phone=5511919694124&amp;text=Oi+vim+pelo+instagram%2C+gostaria+de+saber+mais+informa%C3%A7%C3%B5es+sobre+os+tratamentos."
+         target="_blank"
+         rel="noopener noreferrer external">
+        <span class="num" aria-hidden="true">02</span>
+        <span class="label">Conhecer tratamentos</span>
+        <span class="meta" aria-hidden="true">Menu →</span>
+      </a>
+      <a class="cta"
+         href="https://api.whatsapp.com/send?phone=5511919694124"
+         target="_blank"
+         rel="noopener noreferrer external">
+        <span class="num" aria-hidden="true">03</span>
+        <span class="label">WhatsApp direto</span>
+        <span class="meta" aria-hidden="true">Online →</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <span>© Ketilly Santana</span>
+    </footer>
+  </section>
+</main>
+
+</body>
+</html>
